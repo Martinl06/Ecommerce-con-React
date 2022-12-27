@@ -1,0 +1,15 @@
+h1{
+    color: white;
+    text-align: center;
+
+}
+
+.numeroFijo{
+    display:flex;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 20px;
+
+}
