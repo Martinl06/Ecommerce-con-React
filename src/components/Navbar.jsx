@@ -1,47 +1,27 @@
 import React from "react";
-import {
-  Button,
-  Flex,
-  Menu,
-  MenuButton,
-  MenuItem,
-  MenuList,
-  Portal,
-} from "@chakra-ui/react";
-import CartWidget from "./CartWidget";
+import Container from "react-bootstrap/Container";
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
+import NavDropdown from "react-bootstrap/NavDropdown";
+import Cartwidget from "./CartWidget";
 
-const Navbar = () => {
+function Header() {
   return (
-    <Flex
-      bg="black"
-      width="100%"
-      height="6rem"
-      justifyContent="space-around"
-      alignItems="center"
-      fontFamily="sans-serif"
-      fontSize="26px"
-      textAlign="center"
-      color="red"
-    >
-      <h1>Bookstore</h1>
-      <Button bg="black">Inicio</Button>
-      <Button bg="black">Sobre Nosotros</Button>
-      <Button bg="black">Contacto</Button>
-      <Menu>
-        <MenuButton fontSize="20px">Productos</MenuButton>
-        <CartWidget />
-        <Portal>
-          <MenuList>
-            <MenuItem>Novelas</MenuItem>
-            <MenuItem>Terror</MenuItem>
-            <MenuItem>Fantasía</MenuItem>
-            <MenuItem>Comic</MenuItem>
-            <MenuItem>Suspenso</MenuItem>
-          </MenuList>
-        </Portal>
-      </Menu>
-    </Flex>
+    <Navbar bg="dark" variant="dark" expand="lg" className="border-bottom">
+      <Container className="barra">
+        <Navbar.Brand href="#home">Flor De Loto Store</Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="mx-auto py-3">
+            <Nav.Link href="#Hombre">HOMBRE</Nav.Link>
+            <Nav.Link href="#Mujer">MUJER</Nav.Link>
+            <Nav.Link href="#Accesorios">ACCESORIOS</Nav.Link>
+          </Nav>
+        </Navbar.Collapse>
+        <Cartwidget />
+      </Container>
+    </Navbar>
   );
-};
+}
 
-export default Navbar;
+export default Header;

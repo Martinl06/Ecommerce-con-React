@@ -1,15 +1,31 @@
 h1{
-    color: white;
+    color: black;
     text-align: center;
-
 }
 
-.numeroFijo{
-    display:flex;
+.bi-cart4{
+    color: red;
+}
+.numero{
+    color: red;
+}
+img{
+     box-shadow: 0px 1px 10px rgb(10, 10, 10);
+}
+
+.cardCard{
+    padding: 1rem;
+    box-shadow: 0px 1px 10px rgb(7, 7, 7);
     align-items: center;
     text-align: center;
-    flex-direction: column;
-    background-color: white;
-    border-radius: 20px;
+    border-radius: 10px;
+    margin-top: 10rem;
 
 }
+.cardGrid{
+    box-shadow: 0px 1px 10px rgb(10, 10, 10);
+}
+
+
+
+  
