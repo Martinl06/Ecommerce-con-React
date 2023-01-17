@@ -4,13 +4,6 @@ import { Box, Button, ButtonGroup, Card, CardBody, CardFooter, Divider, Heading,
 
 const Item = ({title, description, price,image}) => {
 
-  const breakpoints = {
-    sm: '30em',
-    md: '48em',
-    lg: '62em',
-    xl: '80em',
-    '2xl': '96em',
-  }
 
 
   return (

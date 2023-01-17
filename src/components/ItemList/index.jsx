@@ -2,6 +2,9 @@ import React from 'react'
 import Item from '../Item'
 import { Grid } from '@chakra-ui/react'
 
+
+
+
 const index = ({listProduct}) => {
   
   return (
