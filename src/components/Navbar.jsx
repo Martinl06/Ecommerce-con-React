@@ -4,7 +4,7 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import { Link } from "react-router-dom";
 import Cartwidget from "./CartWidget";
-import { Route, Routes } from 'react-router-dom'
+
 
 
 
@@ -25,9 +25,7 @@ function Header() {
         <Cartwidget />
       </Container>
     </Navbar>
-    <Routes>
-      <Route path='/' element={<p>'Bienvenido a Flor De Loto Store'</p>}/>
-  </Routes>
+    
     </>
   );
 }

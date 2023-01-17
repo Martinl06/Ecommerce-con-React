@@ -4,6 +4,8 @@ import { useEffect, useState } from 'react'
 import ItemList from './ItemList'
 import { products } from '../Fetch/products'
 import { functionFetch } from '../Fetch/FunctionFetch'
+import { Route, Routes } from 'react-router-dom'
+
 
 const ItemListContainer = ({greeting}) => {
 
@@ -39,6 +41,10 @@ const ItemListContainer = ({greeting}) => {
     
 
     </Flex>
+
+    <Routes>
+      {<Route path='/' element={<p>'Bienvenido a Flor De Loto Store'</p>}/> }
+  </Routes>
     {!loading ? <ItemList listProduct={listProduct} /> : <Text>Cargando...</Text>}
     
 

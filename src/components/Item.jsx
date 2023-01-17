@@ -42,6 +42,7 @@ const Item = ({title, description, price,image}) => {
 </Card>
 </Box>
 </SimpleGrid>
+
 </>
   )
 }

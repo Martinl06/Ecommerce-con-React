@@ -13,7 +13,7 @@ function App() {
    <Navbar />
    <ItemListContainer greeting={"Bienvenidos a nuestra tienda virtual!!!"} />
    <Card />
-
+   
 
     </div>
   )
