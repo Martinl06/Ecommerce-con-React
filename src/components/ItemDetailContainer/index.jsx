@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { products } from "../../Fetch/products"
 import { functionFetch } from "../../Fetch/FunctionFetch"
-import ItemDetail from "../Item"
+import ItemDetail from "../ItemDetail"
 import { Text } from "@chakra-ui/react"
 import { useParams } from "react-router-dom"
 

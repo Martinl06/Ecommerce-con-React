@@ -36,7 +36,7 @@ const Item = ({product}) => {
       <Button variant='ghost' colorScheme='black'>
         Add to cart
       </Button>
-      <NavLink to = {`product/${product.id}`}>
+      <NavLink to = {`product/.id}`}>
       <Button variant='ghost' colorScheme='black'>
         Detail
       </Button>

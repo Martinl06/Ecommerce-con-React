@@ -1,6 +1,8 @@
+import {  Button,  Card, CardBody, CardFooter, Heading, Image, Stack, Text} from '@chakra-ui/react'
+
 const ItemDetail = ({listProduct}) => {
 
-    const  {title,image, description} = listProduct
+    const {title ,image, description} = listProduct
 
 
   return (
