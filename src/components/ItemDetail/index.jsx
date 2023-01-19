@@ -7,22 +7,23 @@ const ItemDetail = ({listProduct}) => {
 
   return (
     <Card
+  bgGradient='linear(to-r, gray.500, blue.100)'
   direction={{ base: 'column', sm: 'row' }}
   overflow='hidden'
   variant='outline'
 >
   <Image
     objectFit='cover'
-    maxW={{ base: '100%', sm: '200px' }}
+    maxW={{ base: '100%', sm: '400px' }}
     src={image}
     alt='Caffe Latte'
   />
 
   <Stack>
     <CardBody>
-      <Heading size='md'>{title}</Heading>
+      <Heading size= "2xl"  >{title}</Heading>
 
-      <Text py='2'>
+      <Text py='20' fontFamily = 'Helvetica' fontWeight='semibold'>
        {description}
       </Text>
     </CardBody>

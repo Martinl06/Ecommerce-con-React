@@ -29,16 +29,13 @@ const Item = ({product}) => {
   <Divider />
   <CardFooter  className="cardGrid">
   <div className="divButton">
-    <ButtonGroup spacing={-2}>
-    <Button variant='ghost' colorScheme='black'>
-        Buy Now
+    <ButtonGroup spacing={2}>
+      <Button variant='solid' colorScheme='blue'>
+        Agregar al Carrito
       </Button>
-      <Button variant='ghost' colorScheme='black'>
-        Add to cart
-      </Button>
-      <NavLink to = {`product/.id}`}>
-      <Button variant='ghost' colorScheme='black'>
-        Detail
+      <NavLink to = {`/product/${product.id}`}>
+      <Button variant='solid' colorScheme='blue'>
+        Ver Detalle
       </Button>
       </NavLink> 
     </ButtonGroup>
@@ -52,4 +49,4 @@ const Item = ({product}) => {
   )
 }
 
-export default Item
+export default Item
