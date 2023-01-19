@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 import ItemList from './ItemList'
 import { products } from '../Fetch/products'
 import { functionFetch } from '../Fetch/FunctionFetch'
-import { Route, Routes } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 
 
 const ItemListContainer = ({greeting}) => {
@@ -12,15 +12,22 @@ const ItemListContainer = ({greeting}) => {
   const [listProduct, setListProduct] = useState([])
   const [loading, setLoading] = useState(true)
 
+  const {category} = useParams()
+  
 
   useEffect(() => {
     setLoading(true)
     functionFetch(products)
       .then(res => {
+        if(category){
+          setLoading(false)
+          setListProduct(res.filter(prod => prod.category === category))
+        } else {
         setLoading(false)
         setListProduct(res)
+        }
       })
-  }, [])
+  }, [category])
 
 
 
@@ -42,9 +49,7 @@ const ItemListContainer = ({greeting}) => {
 
     </Flex>
 
-    <Routes>
-      {<Route path='/' element={<p>'Bienvenido a Flor De Loto Store'</p>}/> }
-  </Routes>
+    
     {!loading ? <ItemList listProduct={listProduct} /> : <Text>Cargando...</Text>}
     
 

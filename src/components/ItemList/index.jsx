@@ -9,10 +9,8 @@ const index = ({listProduct}) => {
   
   return (
     <>
-    
     <Grid templateColumns='repeat(3, 1fr)' gap={1}>
-      {listProduct.map(product => <Item key={product.id} title = {product.title} description = {product.description} price = {product.price} 
-       image = {product.image} />)}
+      {listProduct.map(product => <Item key={product.id} product ={product} />)}
     </Grid>
     
     </>

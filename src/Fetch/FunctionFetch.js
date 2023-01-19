@@ -5,3 +5,7 @@ export const functionFetch = (products) => {
         }, 2000)
     })
 }
+
+
+
+  
