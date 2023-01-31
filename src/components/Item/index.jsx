@@ -1,4 +1,4 @@
-import { Box, Button, ButtonGroup, Card, CardBody, CardFooter, Divider, Heading, Image, Stack, Text, SimpleGrid } from '@chakra-ui/react'
+import { Button, ButtonGroup, Card, CardBody, CardFooter, Divider, Heading, Image, Stack, Text } from '@chakra-ui/react'
 import { NavLink } from 'react-router-dom'
 
 
@@ -6,12 +6,9 @@ import { NavLink } from 'react-router-dom'
 const Item = ({product}) => {
 
 
-
   return (
-    <>
-    <SimpleGrid minChildWidth='120px' spacing='60px'>
-    <Box>
-      <Card maxW='xs' bg= 'yellow.100' m={10} mt='20' height={700}>
+    <div className="backgroudCards" >
+      <Card maxW= 'lg' flexWrap='wrap' bg= 'white' m={10} mt='20' height={700} >
   <CardBody  className="cardGrid" >
     <Image height={300} width={320}
       src={product.image}
@@ -30,22 +27,19 @@ const Item = ({product}) => {
   <CardFooter  className="cardGrid">
   <div className="divButton">
     <ButtonGroup spacing={2}>
-      <Button variant='solid' colorScheme='blue'>
-        Agregar al Carrito
-      </Button>
       <NavLink to = {`/product/${product.id}`}>
       <Button variant='solid' colorScheme='blue'>
-        Ver Detalle
+        Ver Detalle del producto
       </Button>
       </NavLink> 
     </ButtonGroup>
     </div>
   </CardFooter>
 </Card>
-</Box>
-</SimpleGrid>
 
-</>
+
+
+    </div>
   )
 }
 

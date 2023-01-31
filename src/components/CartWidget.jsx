@@ -1,10 +1,13 @@
 import React from 'react'
+import { Link, NavLink } from 'react-router-dom'
+
+
 
 const CartWidget = () => {
   return (
-    <div>
-      <span className='numero'><i className="bi bi-cart4"></i>1</span>
-    </div>
+    <NavLink as ={Link} to= "/cart">
+      <span className='numero'><i className="bi bi-cart4"></i></span>
+      </NavLink>
   )
 }
 

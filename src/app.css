@@ -1,13 +1,10 @@
-h1{
-    color: black;
-    text-align: center;
-}
 
 .bi-cart4{
-    color: red;
+    color: blue;
 }
 .numero{
-    color: red;
+    color: white;
+   
 }
 img{
      box-shadow: 0px 1px 10px rgb(10, 10, 10);
@@ -25,7 +22,84 @@ img{
 .cardGrid{
     box-shadow: 0px 1px 10px rgb(10, 10, 10);
 }
+.homeIcons{
+    color: blue;
+    font-size: 1.5rem;
+    align-items: center;
+    text-align: center;
+    margin-left: 3.3rem;
+}
 
+.carrusel{
+    height: 30rem;
+}
+.ImageFlor{
+    width: 3rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    align-items: center;
+    text-align: center;
+    margin-left: 1rem;
+} 
+.footerEstilos{
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    padding-top: 3rem;
+    color: white;
+    font-size: 1.4em;
+    padding-bottom: 3rem;
+}
+.contador{
+    text-align: center;
+    color: black;
+    align-items: center;
+    justify-content: center;
+    margin-top: .7rem;
+    padding: 0 1rem;
+}
 
+/* Spinner */
 
+.loader {
+    width: 48px;
+    height: 48px;
+    background: #FFF;
+    border-radius: 50%;
+    display: flex;
+    position: relative;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+    margin: 2rem auto;
+  }
+  .loader::after {
+    content: '';  
+    box-sizing: border-box;
+    position: absolute;
+    left: 6px;
+    top: 10px;
+    width: 12px;
+    height: 12px;
+    color: #FF3D00;
+    background: currentColor;
+    border-radius: 50%;
+    box-shadow: 25px 2px, 10px 22px;
+    
+  }
   
+  @keyframes rotation {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  } 
+                                                
+                                                                                                        
+
+                                                

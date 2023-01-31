@@ -13,7 +13,14 @@ function Header() {
     <>
     <Navbar bg="dark" variant="dark" expand="lg" className="border-bottom">
       <Container className="barra">
-        <Navbar.Brand as= {Link} to="/">Flor De Loto Store</Navbar.Brand>
+        <Navbar.Brand as= {Link} to="/">Flor De Loto Store
+        <img
+        src="https://www.stanser.com/wp-content/uploads/2020/12/Flor-de-Loto.jpg"
+        className="d-inline-block align-top ImageFlor" 
+        alt="Flor de Loto"
+        />
+        
+        </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mx-auto py-3">
@@ -21,6 +28,7 @@ function Header() {
             <Nav.Link as= {Link} to ="category/women's clothing">MUJER</Nav.Link>
             <Nav.Link as= {Link} to ="category/jewelery">ACCESORIOS</Nav.Link>
             <Nav.Link as= {Link} to ="category/electronics">ELECTRONICO</Nav.Link>
+            <Nav.Link as= {Link} to ="/Todos">TODOS</Nav.Link>
           </Nav>
         </Navbar.Collapse>
         <Cartwidget />

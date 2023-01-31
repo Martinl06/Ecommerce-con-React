@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import { products } from "../../Fetch/products"
 import { functionFetch } from "../../Fetch/FunctionFetch"
 import ItemDetail from "../ItemDetail"
-import { Text } from "@chakra-ui/react"
+import Spinner from "../Spinner"
 import { useParams } from "react-router-dom"
 
 
@@ -24,7 +24,7 @@ const index = () => {
   
   return (
     <>
-      {!loading ? <ItemDetail listProduct={listProduct} /> : <Text>Cargando</Text>}
+      {!loading ? <ItemDetail listProduct={listProduct} /> : <Spinner/>}
     </>
     
   )

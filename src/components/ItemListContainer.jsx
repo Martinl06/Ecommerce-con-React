@@ -5,13 +5,13 @@ import ItemList from './ItemList'
 import { products } from '../Fetch/products'
 import { functionFetch } from '../Fetch/FunctionFetch'
 import { useParams } from 'react-router-dom'
+import Spinner  from './Spinner'
 
 
 const ItemListContainer = ({greeting}) => {
 
   const [listProduct, setListProduct] = useState([])
   const [loading, setLoading] = useState(true)
-
   const {category} = useParams()
   
 
@@ -31,18 +31,18 @@ const ItemListContainer = ({greeting}) => {
 
 
 
-
   return (
     <>
     <Flex
-    color="Black"
-    fontFamily="sans-serif"
+    color="black"
+    fontFamily="ebrima"
     fontSize="30px"
     textAlign="center"
     alignItems="center"
     justifyContent="center"
     fontWeight="bold"
     marginTop="50px"
+    
     >
   <div className="Titulo">{greeting}</div>
     
@@ -50,9 +50,10 @@ const ItemListContainer = ({greeting}) => {
     </Flex>
 
     
-    {!loading ? <ItemList listProduct={listProduct} /> : <Text>Cargando...</Text>}
+    {!loading ? <ItemList listProduct={listProduct} /> : <Spinner/>}
     
 
+    
     </>
   )
 }

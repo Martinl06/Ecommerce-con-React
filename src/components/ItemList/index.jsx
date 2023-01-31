@@ -5,11 +5,12 @@ import { Grid } from '@chakra-ui/react'
 
 
 
+
 const index = ({listProduct}) => {
   
   return (
     <>
-    <Grid templateColumns='repeat(3, 1fr)' gap={1}>
+    <Grid templateColumns='repeat(3, 1fr)' gap={1} >
       {listProduct.map(product => <Item key={product.id} product ={product} />)}
     </Grid>
     
