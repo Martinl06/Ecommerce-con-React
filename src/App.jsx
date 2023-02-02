@@ -15,8 +15,8 @@ import Cart from './components/Cart'
 function App() {
   
   
-  const [items, setItems] = useState([]);
-  const itemsCollectionRef = collection(db, 'items')
+  const [Items, setItems] = useState([]);
+  const itemsCollectionRef = collection(db, "Items")
 
 
   const getItems = async () => {

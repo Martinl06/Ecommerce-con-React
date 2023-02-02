@@ -3,6 +3,7 @@ import { useState } from 'react'
 import NavLink from 'react-bootstrap/esm/NavLink'
 import { Link } from 'react-router-dom'
 import ItemCount from '../ItemCount'
+import { useCartContext } from '../../Context/CartContext'
 
 const ItemDetail = ({listProduct}) => {
 
@@ -11,11 +12,15 @@ const ItemDetail = ({listProduct}) => {
 
    const [estaAgregado, setEstaAgregado] = useState(false)
 
-   const onAdd = () => {
+   const {addToCart, listaCarrito} = useCartContext()
+
+
+   const onAdd = (quantity) => {
+    addToCart(listProduct, quantity)
     setEstaAgregado(true)
 
    }
-  
+  console.log(addToCart)
 
   return (
     <Card
