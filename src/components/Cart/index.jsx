@@ -3,7 +3,7 @@ import { useCartContext } from '../../context/CartContext'
 
 const index = () => {
 
-  const {cartList , totalPrice, removeProduct, cleanCart } = useCartContext()
+  const {listaCarrito , totalPrice, removeProduct, cleanCart } = useCartContext()
 
 
 
@@ -11,7 +11,7 @@ const index = () => {
   return (
     <Center>
       <VStack>
-        {cartList.map(product =>
+        {listaCarrito.map(product =>
           <HStack key={product.id} boxShadow = 'lg' p='6' rounded = 'md' spacing={10} bg="white">
             <Image src={product.image} alt={product.title} width='100px' />
             <Text as='b'>{product.title}</Text>
@@ -19,7 +19,7 @@ const index = () => {
             <Button colorScheme='red' size='sm' onClick={()=> removeProduct(product.id)}>X</Button>
           </HStack>
         )}
-        {cartList.length === 0 ?
+        {listaCarrito.length === 0 ?
           <Text>Tu carrito esta vacio </Text>
           : 
           <>

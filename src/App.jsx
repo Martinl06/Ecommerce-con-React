@@ -10,6 +10,7 @@ import {db} from "./db/firebase-config"
 import { collection, getDocs } from "firebase/firestore";
 import { useEffect, useState } from "react";
 import Cart from './components/Cart'
+import { CartContextProvider } from "./Context/CartContext";
 
 
 function App() {
@@ -35,7 +36,7 @@ useEffect(() => {
 
 
   return (
-    
+  <CartContextProvider>
     <ChakraProvider> 
       <BrowserRouter>
         <Navbar />
@@ -49,6 +50,7 @@ useEffect(() => {
         <Footer />
       </BrowserRouter>
     </ChakraProvider>
+  </CartContextProvider>
     
     
   )
