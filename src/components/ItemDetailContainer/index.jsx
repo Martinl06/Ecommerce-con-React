@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react"
-import { products } from "../../Fetch/products"
-import { functionFetch } from "../../Fetch/FunctionFetch"
+
 import ItemDetail from "../ItemDetail"
 import Spinner from "../Spinner"
 import { useParams } from "react-router-dom"
+
+import { collection, getDocs } from "firebase/firestore";
+import {db} from "../../db/firebase-config"
 
 
 const index = () => {
@@ -14,12 +16,18 @@ const index = () => {
 
   useEffect(() => {
     setLoading(true)
-    functionFetch(products)
-      .then(res => {
+    const productosCollection = collection(db, "Items");
+    const pedido = getDocs(productosCollection);
+
+    pedido.then((snapshot) => {
+        const productos = snapshot.docs.map((doc) => {
+          return { ...doc.data(), id: doc.id };
+        });
+        setListProduct(productos.find(prod => prod.id === id))
         setLoading(false)
-        setListProduct(res.find(item => item.id === parseInt(id)))
       })
-      }, [])
+  },[id])
+  
   
   
   return (

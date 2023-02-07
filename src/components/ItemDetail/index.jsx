@@ -12,7 +12,7 @@ const ItemDetail = ({listProduct}) => {
 
    const [estaAgregado, setEstaAgregado] = useState(false)
 
-   const {addToCart, listaCarrito} = useCartContext()
+   const {addToCart} = useCartContext()
 
 
    const onAdd = (quantity) => {
@@ -20,7 +20,7 @@ const ItemDetail = ({listProduct}) => {
     setEstaAgregado(true)
 
    }
-  console.log(addToCart)
+  
 
   return (
     <Card

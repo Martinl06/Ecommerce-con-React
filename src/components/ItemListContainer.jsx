@@ -2,10 +2,12 @@ import { Flex, Text } from '@chakra-ui/react'
 import React from 'react'
 import { useEffect, useState } from 'react'
 import ItemList from './ItemList'
-import { products } from '../Fetch/products'
-import { functionFetch } from '../Fetch/FunctionFetch'
+
 import { useParams } from 'react-router-dom'
 import Spinner  from './Spinner'
+import { collection, getDocs } from "firebase/firestore";
+import {db} from "../db/firebase-config"
+
 
 
 const ItemListContainer = ({greeting}) => {
@@ -16,18 +18,26 @@ const ItemListContainer = ({greeting}) => {
   
 
   useEffect(() => {
-    setLoading(true)
-    functionFetch(products)
-      .then(res => {
-        if(category){
-          setLoading(false)
-          setListProduct(res.filter(prod => prod.category === category))
+    setLoading(true);
+    const productsCollection = collection(db, "Items");
+    const firestore = getDocs(productsCollection);
+
+    firestore.then((snapshot) => {
+        const productos = snapshot.docs.map((doc) => {
+          return { ...doc.data(), id: doc.id };
+        });
+        if (category) {
+          setListProduct(productos.filter(product=>product.category===category));
+          setLoading(false);
         } else {
-        setLoading(false)
-        setListProduct(res)
+          setListProduct(productos);
+          setLoading(false);
         }
       })
-  }, [category])
+      .catch((err) => {
+        console.log(err);
+      });
+  }, [category]);
 
 
 

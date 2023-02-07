@@ -6,8 +6,8 @@ import ItemDetailContainer from "./components/ItemDetailContainer";
 import { ChakraProvider } from "@chakra-ui/react";
 import Imagen from "./components/Imagen";
 import Footer from "./components/Footer";
-import {db} from "./db/firebase-config"
-import { collection, getDocs } from "firebase/firestore";
+
+
 import { useEffect, useState } from "react";
 import Cart from './components/Cart'
 import { CartContextProvider } from "./Context/CartContext";
@@ -16,7 +16,7 @@ import { CartContextProvider } from "./Context/CartContext";
 function App() {
   
   
-  const [Items, setItems] = useState([]);
+  /*const [Items, setItems] = useState([]);
   const itemsCollectionRef = collection(db, "Items")
 
 
@@ -30,7 +30,7 @@ function App() {
 
 useEffect(() => {
   getItems();
-}, []);
+}, []);*/
 
 
 

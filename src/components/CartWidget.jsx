@@ -11,7 +11,7 @@ const CartWidget = () => {
   return (
     <NavLink as ={Link} to= "/cart">
       <span><i className="bi bi-cart4"></i></span>
-      <Text className= "numeroCarrito" fontSize='xs'>{totalQuantity}</Text>
+      <Text className= "numeroCarrito" fontSize='xs'>{totalQuantity()}</Text>
       </NavLink>
   )
 }
