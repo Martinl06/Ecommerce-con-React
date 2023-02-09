@@ -17,9 +17,9 @@ const index = () => {
   useEffect(() => {
     setLoading(true)
     const productosCollection = collection(db, "Items");
-    const pedido = getDocs(productosCollection);
+    const firestore = getDocs(productosCollection);
 
-    pedido.then((snapshot) => {
+    firestore.then((snapshot) => {
         const productos = snapshot.docs.map((doc) => {
           return { ...doc.data(), id: doc.id };
         });

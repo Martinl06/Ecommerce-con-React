@@ -15,26 +15,6 @@ import { CartContextProvider } from "./Context/CartContext";
 
 function App() {
   
-  
-  /*const [Items, setItems] = useState([]);
-  const itemsCollectionRef = collection(db, "Items")
-
-
-  const getItems = async () => {
-    const querySnapshot = await getDocs(itemsCollectionRef);
-    const docs = querySnapshot.docs.map((doc) => doc.data());
-    console.log(docs);
-    setItems(docs);
-  };
-
-
-useEffect(() => {
-  getItems();
-}, []);*/
-
-
-
-
   return (
   <CartContextProvider>
     <ChakraProvider> 
