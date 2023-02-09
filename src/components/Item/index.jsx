@@ -16,7 +16,7 @@ import { NavLink } from "react-router-dom";
 const Item = ({ product }) => {
   return (
     <div className="backgroudCards" display = "flex">
-      <Card maxW="lg" flexWrap="wrap" bg="white" m={10} mt="20" height={700} display="flex">
+      <Card maxW="sm" bg="white" m={10} mt="20" height={630} width={320} display="flex">
         <CardBody className="cardGrid">
           <Image
             height={300}
@@ -25,7 +25,7 @@ const Item = ({ product }) => {
             borderRadius="lg"
           />
           <Stack className="cardCard" spacing="3">
-            <Heading size="md" color="black">
+            <Heading size="sm" color="black">
               {product.title}
             </Heading>
             <Text color="white" fontSize="15" fontWeight="bold"></Text>

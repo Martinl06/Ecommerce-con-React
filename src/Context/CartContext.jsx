@@ -1,5 +1,6 @@
-import { createContext, useState, useContext, useEffect } from "react";
-
+import { createContext, useState, useContext } from "react";
+import Swal from "sweetalert2";
+import withReactContent from 'sweetalert2-react-content'
 
 
 
@@ -30,9 +31,25 @@ export function CartContextProvider ({ children }){
         }
     }
 
-        const removeProduct = (id) =>  setListaCarrito(listaCarrito.filter(product => product.id != id))
 
-        const clearCart = () => setListaCarrito([])
+
+        const removeProduct = (id) => {setListaCarrito(listaCarrito.filter(product => product.id != id ))
+        Swal.fire({
+            icon: 'error',
+            title: 'Producto removido',
+            text: 'Has quitado un producto de tu carrito',
+            footer: '<a href="">Vas a dejar esto asi?</a>'
+          })}
+
+        const clearCart = () => {setListaCarrito([]) 
+        Swal.fire({
+            title: 'Carrito vacio',
+            text: "No hay productos en tu carrito!!!",
+            icon: 'error',
+            confirmButtonText: 'ok',
+            timer: 4000,
+
+        })}
 
         const totalPrice = () =>{
             return listaCarrito.reduce((acc, product) => acc += (product.price * product.quantity), 0)
@@ -41,7 +58,17 @@ export function CartContextProvider ({ children }){
             return listaCarrito.reduce((acc, product) => acc += product.quantity, 0)
         }
 
-        
+        function finalizarCompra () {
+            const MySwal = withReactContent(Swal)
+            MySwal.fire({
+                title: <p>Compra Finalizada </p>,
+                text: "Gracias por su compra!!!",
+                icon: 'success',
+                confirmButtonText: 'Ok',
+                timer: 4000,
+
+            })
+        }
         
 
     return(
@@ -51,6 +78,7 @@ export function CartContextProvider ({ children }){
             clearCart,
             totalPrice,
             totalQuantity,
+            finalizarCompra,
             listaCarrito
         }}>
             {children}
