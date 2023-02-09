@@ -7,23 +7,18 @@ import { useEffect } from 'react';
 const index = () => {
 
 
-  const {listaCarrito , totalPrice, removeProduct, clearCart,} = useCartContext()
+  const {listaCarrito , totalPrice, removeProduct, clearCart} = useCartContext()
+  const agregarAlerta = withReactContent(Swal);
+
 
   useEffect(() => {
-    agregarAlerta()
+    agregarAlerta.fire({title: "Producto removido del carrito", icon: "success", showConfirmButton: false, timer: 2000,})
   }, [removeProduct])
 
 
-  const agregarAlerta = () => {
-            if (listaCarrito.length > 0) {
-                Swal.fire({
-                title: "Producto removido del carrito",
-                icon: "success",
-                showConfirmButton: false,
-                timer: 2000,
-                });
-            }
-          }
+  
+            
+          
 
   return (
     <Center>
