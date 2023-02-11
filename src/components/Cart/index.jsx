@@ -1,11 +1,12 @@
 import { Button, Center, Flex, HStack, Image, Text, VStack } from '@chakra-ui/react'
+import { Link, NavLink } from 'react-router-dom';
 import { useCartContext } from "../../Context/CartContext";
 
 
 const index = () => {
 
 
-  const {listaCarrito , totalPrice, removeProduct, clearCart, finalizarCompra} = useCartContext()
+  const {listaCarrito , totalPrice, removeProduct, clearCart,} = useCartContext()
 
             
           
@@ -38,7 +39,9 @@ const index = () => {
           <Flex flexWrap= 'wrap'>
           <Text m='9' className ='totalCart'>Total: U$S ${totalPrice()}</Text>   
           <Button className ='vaciarCarrito' m='9' p='5' colorScheme='red' size='sm' onClick={clearCart}>Vaciar Carrito</Button>
-          <Button colorScheme='red'  m='9' p='5' size='sm' onClick={finalizarCompra}>Finalizar compra</Button>
+          <NavLink as= {Link} to="/formulario">
+          <Button colorScheme='red'  m='9' p='5' size='sm'>Finalizar compra</Button>
+          </NavLink>
           </Flex>
           </>
           }

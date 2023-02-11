@@ -58,17 +58,8 @@ export function CartContextProvider ({ children }){
             return listaCarrito.reduce((acc, product) => acc += product.quantity, 0)
         }
 
-        function finalizarCompra () {
-            const MySwal = withReactContent(Swal)
-            MySwal.fire({
-                title: <p>Compra Finalizada </p>,
-                text: "Gracias por su compra!!!",
-                icon: 'success',
-                confirmButtonText: 'Ok',
-                timer: 4000,
 
-            })
-        }
+        const carritoVacio = () => setListaCarrito([])
         
 
     return(
@@ -78,7 +69,7 @@ export function CartContextProvider ({ children }){
             clearCart,
             totalPrice,
             totalQuantity,
-            finalizarCompra,
+            carritoVacio,
             listaCarrito
         }}>
             {children}
