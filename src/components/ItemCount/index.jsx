@@ -16,9 +16,9 @@ const ItemCount = ({ initial, stock, onAdd}) => {
   return (
     <>
     <HStack>
-        <Button variant='ghost' colorScheme='blue' size='sm' onClick={handleAdd}>+</Button>
-        <Text>{count}</Text>
         <Button variant='ghost' colorScheme='blue' size='sm' onClick={handleRest}>-</Button>
+        <Text>{count}</Text>
+        <Button variant='ghost' colorScheme='blue' size='sm' onClick={handleAdd}>+</Button>
         <Button colorScheme='blue' size='sm' onClick={() => onAdd(count)} >Agregar al carrito</Button>
     </HStack>
     </>

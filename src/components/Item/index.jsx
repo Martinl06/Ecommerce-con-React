@@ -39,7 +39,7 @@ const Item = ({ product }) => {
           <div className="divButton">
             <ButtonGroup spacing={2}>
               <NavLink to={`/product/${product.id}`}>
-                <Button variant="solid" colorScheme="blue" mx="9">
+                <Button variant="solid" colorScheme="blue" mx="8">
                   Ver Detalle del producto
                 </Button>
               </NavLink>
