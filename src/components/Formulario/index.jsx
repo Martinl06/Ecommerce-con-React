@@ -82,8 +82,8 @@ import { Link, NavLink } from 'react-router-dom';
           <Input id='inputApellido' value={inputApellido} onChange={(e) => setInputApellido(e.target.value)} type="text" placeholder="Apellido" />
 
 
-          <FormLabel>Direccion</FormLabel>
-          <Input id='inputDireccion' value={inputDireccion} onChange={(e) => setInputDireccion(e.target.value)} type="text" placeholder="Direccion" />
+          <FormLabel>Dirección</FormLabel>
+          <Input id='inputDireccion' value={inputDireccion} onChange={(e) => setInputDireccion(e.target.value)} type="text" placeholder="Dirección" />
     
 
           <FormLabel>Email</FormLabel>
@@ -94,8 +94,8 @@ import { Link, NavLink } from 'react-router-dom';
           <Input id="inputConfirmEmail" value={inputConfirmEmail} onChange= {(e) => setInputConfirmEmail(e.target.value)} type="email" placeholder="Confirmar Email"/>
   
 
-          <FormLabel>Telefono</FormLabel>
-          <Input id='inputTelefono' value={inputTelefono} onChange={(e) => setInputTelefono(e.target.value)} type="number" placeholder="Telefono"  />
+          <FormLabel>Teléfono</FormLabel>
+          <Input id='inputTelefono' value={inputTelefono} onChange={(e) => setInputTelefono(e.target.value)} type="number" placeholder="Teléfono"  />
         </FormControl>
             <NavLink as = {Link} to = "/">
             <Button disabled={
