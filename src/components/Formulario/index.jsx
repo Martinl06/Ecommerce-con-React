@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import {
     FormControl,
     FormLabel,
@@ -12,6 +12,7 @@ import {
 
   import Swal from "sweetalert2";
   import withReactContent from 'sweetalert2-react-content'
+import { Link, NavLink } from 'react-router-dom';
 
 
 
@@ -23,10 +24,10 @@ import {
     const [inputEmail , setInputEmail] = useState('')
     const [inputConfirmEmail , setInputConfirmEmail] = useState('')
     const [inputTelefono , setInputTelefono] = useState('')
-    const {inputId, setInputId} = useState(null)
 
 
     const {listaCarrito, totalPrice, carritoVacio} = useCartContext();
+
 
     const createOrder = {
         items: listaCarrito.map(product =>({ id: product.id, title: product.title, price: product.price, quantity: product.quantity})),
@@ -36,35 +37,27 @@ import {
         Direccion: inputDireccion,
         Email: inputEmail,
         Telefono: inputTelefono,
+        
 
     }
-
-    const AlertaCompraFinal = () => {
-        const MySwal = withReactContent(Swal)
-        MySwal.fire({
-            title: <p>Compra Finalizada </p>,
-            text: "Gracias por su compra!!!, Su Orden de Compra es: " + {inputId},    
-            icon: 'success',
-            confirmButtonText: 'Ok',
-
-        })
-    }
-    
-    const handleId = (id) => {
-        setInputId(id)
-    }
-
-
-
+  
     const handleClick = () => {
         const db = getFirestore();
         const ordersCollection = collection(db, "orders");
         addDoc(ordersCollection, createOrder)
         .then(({id}) => {
-            handleId(id)})
+          const MySwal = withReactContent(Swal)
+          MySwal.fire({
+              title: <p>Compra Finalizada </p>,
+              text: `Gracias por su compra ${inputNombre} ${inputApellido}, !!!, Su Orden de Compra es: ${id}, nos estaremos comunicando con usted para acordar la entrega`,    
+              icon: 'success',
+              confirmButtonText: 'Ok',
+  
+          })
+      })
             carritoVacio()
-            AlertaCompraFinal()
-}
+                  
+    }
 
 
 
@@ -104,10 +97,10 @@ import {
           <FormLabel>Telefono</FormLabel>
           <Input id='inputTelefono' value={inputTelefono} onChange={(e) => setInputTelefono(e.target.value)} type="number" placeholder="Telefono"  />
         </FormControl>
-
+            <NavLink as = {Link} to = "/">
             <Button disabled={
                   !inputNombre || !inputTelefono || !inputEmail || inputConfirmEmail !== inputEmail || !inputApellido || !inputDireccion
-                } onClick={handleClick} color='blue' my='2'>Comprar</Button>
+                } onClick={handleClick} color='blue' my='2'>Comprar</Button></NavLink>
         <p className="parrafoForm">Muchas gracias por comprar en FlorDeLotoStore!!!</p>
         </div>
         </Flex>

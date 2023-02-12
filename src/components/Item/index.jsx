@@ -25,10 +25,10 @@ const Item = ({ product }) => {
             borderRadius="lg"
           />
           <Stack className="cardCard" spacing="3">
-            <Heading size="sm" color="black">
+            <Heading size="md" color="black">
               {product.title}
             </Heading>
-            <Text color="white" fontSize="15" fontWeight="bold"></Text>
+            <Text color="white" fontSize="20" fontWeight="bold"></Text>
             <Text color="blue.600" fontSize="3xl" fontWeight="bold">
               U$S {product.price}
             </Text>
@@ -39,7 +39,7 @@ const Item = ({ product }) => {
           <div className="divButton">
             <ButtonGroup spacing={2}>
               <NavLink to={`/product/${product.id}`}>
-                <Button variant="solid" colorScheme="blue" mx="10">
+                <Button variant="solid" colorScheme="blue" mx="9">
                   Ver Detalle del producto
                 </Button>
               </NavLink>
