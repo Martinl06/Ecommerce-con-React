@@ -4,8 +4,6 @@ import {
   Card,
   CardBody,
   CardFooter,
-  Divider,
-  Flex,
   Heading,
   Image,
   Stack,
@@ -16,7 +14,7 @@ import { NavLink } from "react-router-dom";
 const Item = ({ product }) => {
   return (
     <div className="backgroudCards" display = "flex">
-      <Card maxW="sm" bg="white" m={10} mt="20" height={630} width={320} display="flex">
+      <Card maxW="sm" bg="white" m={8} mt="20" height={650} width={320} display="flex">
         <CardBody className="cardGrid">
           <Image
             height={300}
@@ -25,22 +23,24 @@ const Item = ({ product }) => {
             borderRadius="lg"
           />
           <Stack className="cardCard" spacing="3">
-            <Heading size="md" color="black">
+            <Heading className="cardCard" size="md" color="black">
               {product.title}
             </Heading>
-            <Text color="white" fontSize="20" fontWeight="bold"></Text>
-            <Text color="blue.600" fontSize="3xl" fontWeight="bold">
-              U$S {product.price}
-            </Text>
           </Stack>
         </CardBody>
-        <Divider />
-        <CardFooter className="cardGrid">
+        <CardFooter className="cardFooter">
+        <div>
+            <div className="target-Price">
+            <Text color="white" fontSize="2xl" fontWeight="bold">
+              U$S {product.price}
+            </Text>
+            </div>
+            </div>
           <div className="divButton">
             <ButtonGroup spacing={2}>
               <NavLink to={`/product/${product.id}`}>
-                <Button variant="solid" colorScheme="blue" mx="8">
-                  Ver Detalle del producto
+                <Button variant="solid" colorScheme="blue" mx="8" mt='6'>
+                  Ver Detalle
                 </Button>
               </NavLink>
             </ButtonGroup>

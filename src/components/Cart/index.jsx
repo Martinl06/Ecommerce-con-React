@@ -33,7 +33,7 @@ const index = () => {
           </HStack>
         )}
         {listaCarrito.length === 0 ?
-          <h1 className='carritoTitle'>Tu carrito esta vacio, no salgas sin comprar!!! </h1>
+          <h1 className='carrito-Title'>Tu carrito esta vacio, no salgas sin comprar!!!</h1>
           : 
           <>
           <Flex flexWrap= 'wrap'>

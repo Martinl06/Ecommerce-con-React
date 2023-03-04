@@ -38,11 +38,11 @@ const ItemDetail = ({listProduct}) => {
 
   <Stack>
     <CardBody>
-      <Heading size= "2xl"  >{title}</Heading>
+      <Heading className='detail-Product' size= "xl"  >{title}</Heading>
       <Text py='20' fontFamily = 'Helvetica' fontWeight='semibold'>
        {description}
       </Text>
-      <Text color='blue.600' fontSize= '3xl' fontWeight='bold'>
+      <Text className='detail-Price' color='white' fontSize= '3xl' fontWeight='bold'>
         U$S {price}
       </Text>
     </CardBody>
