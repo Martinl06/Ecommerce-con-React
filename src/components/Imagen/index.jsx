@@ -36,7 +36,7 @@ function index() {
         <Carousel.Caption>
           <h3>Tenemos accesorrios para mujer y articulos electrónicos</h3>
           <p>
-            Visite nuestro sitio y compruébelo de.
+            Visite nuestro sitio y compruébelo.
           </p>
         </Carousel.Caption>
       </Carousel.Item>

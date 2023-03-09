@@ -23,7 +23,7 @@ const index = () => {
           spacing={5} 
           bg="white" 
           flexDirection= 'column'>
-          <h1 className='carrito-Title'>Producto seleccionados</h1>
+          <h1 className='carrito-Title'>Producto seleccionado</h1>
             <Image src={product.image} alt={product.title} width='11rem' height="9rem" margin="auto" />
             <Text flexWrap="wrap" paddingTop="3rem" fontFamily="Helvetica" fontSize="1.5rem" textAlign= "center" as='b' margin="auto">{product.title}</Text>
             <Text className='textoDetail' paddingTop="1rem" fontFamily="Bebas Neue" fontSize="1.25rem" textAlign= "center" as='b' margin="auto">Cantidad: {product.quantity}</Text>
